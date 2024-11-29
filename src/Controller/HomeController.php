@@ -15,6 +15,6 @@ class HomeController extends AbstractController
     )]
     public function index(Request $request): Response
     {
-        return new Response('Hello ' . $request->query->get('name', 'Anonyme') . ' !');
+        return $this->render('home/index.html.twig');
     }
 }

@@ -14,7 +14,7 @@ class RecipeController extends AbstractController
     )]
     public function index(): Response
     {
-        return new Response('Recettes');
+        return $this->render('recipe/index.html.twig');
     }
 
     #[Route(
@@ -24,6 +24,9 @@ class RecipeController extends AbstractController
     )]
     public function show(string $slug, int $id): Response
     {
-        return new Response('Recette n°' . $id . ' : ' . $slug);
+        return $this->render('recipe/show.html.twig', [
+            'id' => $id,
+            'slug' => $slug,
+        ]);
     }
 }
